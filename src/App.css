@@ -137,7 +137,7 @@ body {
 }
 
 .top-menu {
-  position: absolute;
+  position: relative;
   top: 113.24px;
   left: 33.31px;
   opacity: 0px;
@@ -153,6 +153,20 @@ body {
   display: flex;
   gap: 16px;
   align-items: center;
+}
+
+.menu-container {
+  position: relative;
+}
+
+.yellow-space {
+  position: absolute;
+  top: 0;
+  right: 33.31px;
+  background: #FFC01E;
+  width: 6.66px;
+  height: 19.98px;
+  border-radius: 4.16px 0px 0px 4.16px;
 }
 .dashboard-item-container {
   display: grid;

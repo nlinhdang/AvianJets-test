@@ -60,13 +60,14 @@ const Sidebar = () => {
           {menus.map((menu, index) => (
             <div
               key={index}
-              className={`${menu.name}-container`}
+              className={`menu-container ${menu.name}-container`}
               onClick={() => {
                 handleClick(index)
               }}
             >
               <img src={menu.icon} alt={menu.name} className={menu.icon}/>
               <p className={menu.name}>{menu.name}</p>
+              <div className="yellow-space"></div>
               
             </div>
           ))}
