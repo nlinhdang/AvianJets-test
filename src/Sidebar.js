@@ -1,15 +1,19 @@
 import logo from './img/Logo.png'
 import dashboard from './img/element-3.png'
-import trans from './img/wallet-2.png'
+import trans from './img/wallet-2.svg'
 import wallet from './img/wallet-minus.png'
-import walletTest from './img/wallet-minus.svg'
-
 import analytics from './img/presention-chart.png'
 import personal from './img/user.png'
 import sms from './img/sms.png'
 import setting from './img/setting-2.png'
 import { useState } from 'react'
 import Dashboard from './Dashboard'
+import Transactions from './Transactions'
+import Wallet from './Wallet'
+import Analytics from './Analytics'
+import Personal from './Personal'
+import Message from './Message'
+import Setting from './Setting'
 
 
 const Sidebar = () => {
@@ -17,38 +21,45 @@ const Sidebar = () => {
   const menus = [
     {
       name: 'Dashboard',
-      icon: dashboard
+      icon: dashboard,
+      component: <Dashboard />
     },
     {
       name: 'Transactions',
-      icon: trans
+      icon: trans,
+      component: <Transactions />
     },
     {
       name: 'Wallet',
-      icon: wallet
+      icon: wallet,
+      component: <Wallet />
     },
     {
       name: 'Analytics',
-      icon: analytics
+      icon: analytics,
+      component: <Analytics />
     },
     {
       name: 'Personal',
-      icon: personal
+      icon: personal,
+      component: <Personal />
     },
     {
       name: 'Message',
-      icon: sms
+      icon: sms,
+      component: <Message />
     },
     {
       name: 'Setting',
-      icon: setting
+      icon: setting,
+      component: <Setting />
     }
   ]
 
-  const [isClicked, setIsClicked] = useState(false)
+  const [active, setActive] = useState(null)
   const handleClick = (index) => {
-    setIsClicked(true)
-    
+    setActive(index === active ? null : index)
+
   }
   return (
     <>
@@ -60,26 +71,24 @@ const Sidebar = () => {
           {menus.map((menu, index) => (
             <div
               key={index}
-              className={`${menu.name}-container`}
+              className={`${active === index ? 'active' : ''} ${menu.name}-container`}
               onClick={() => {
                 handleClick(index)
-              }}
-            >
-              <img src={menu.icon} alt={menu.name} className={menu.icon}/>
+              }}>
+              <img src={menu.icon} alt={menu.name} className={menu.icon} />
               <p className={menu.name}>{menu.name}</p>
-              
+
             </div>
           ))}
         </div>
 
-        {isClicked && <Dashboard />}
       </div>
 
-      
-
-    
+      <div className="content">
+        {active !== null && menus[active].component}
+      </div>
     </>
   );
 }
- 
+
 export default Sidebar;
