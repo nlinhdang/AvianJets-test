@@ -140,7 +140,7 @@ body {
 }
 
 .top-menu {
-  position: absolute;
+  position: relative;
   top: 113.24px;
   left: 33.31px;
   opacity: 0px;
@@ -158,6 +158,29 @@ body {
   gap: 16px;
   align-items: center;
   cursor: pointer;
+}
+
+.menu-container {
+  position: relative;
+}
+
+.menu-container.active .menu-icon path {
+  fill: #1FCB4F;
+}
+
+.yellow-space {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 33.31px;
+  background: #FFC01E;
+  width: 6.66px;
+  height: 19.98px;
+  border-radius: 4.16px 0px 0px 4.16px;
+}
+
+.yellow-space.show {
+  display: block;
 }
 
 .top-menu [class$='-container']:hover {
@@ -206,10 +229,6 @@ body {
   align-items: center;
   justify-content: center;
 
-}
-
-.dashboard-item-info {
-  /* margin: auto 0; */
 }
 
 .dashboard-item-title {

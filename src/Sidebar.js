@@ -1,11 +1,11 @@
 import logo from './img/Logo.png'
-import dashboard from './img/element-3.png'
+import dashboard from './img/element-3.svg'
 import trans from './img/wallet-2.svg'
-import wallet from './img/wallet-minus.png'
-import analytics from './img/presention-chart.png'
-import personal from './img/user.png'
-import sms from './img/sms.png'
-import setting from './img/setting-2.png'
+import wallet from './img/wallet-minus.svg'
+import analytics from './img/presention-chart.svg'
+import personal from './img/user.svg'
+import sms from './img/sms.svg'
+import setting from './img/setting-2.svg'
 import { useState } from 'react'
 import Dashboard from './Dashboard'
 import Transactions from './Transactions'
@@ -14,6 +14,8 @@ import Analytics from './Analytics'
 import Personal from './Personal'
 import Message from './Message'
 import Setting from './Setting'
+
+import { ReactSVG } from 'react-svg';
 
 
 const Sidebar = () => {
@@ -71,13 +73,14 @@ const Sidebar = () => {
           {menus.map((menu, index) => (
             <div
               key={index}
-              className={`${active === index ? 'active' : ''} ${menu.name}-container`}
+
+              className={`menu-container ${active === index ? 'active' : ''} ${menu.name}-container`}
               onClick={() => {
                 handleClick(index)
               }}>
-              <img src={menu.icon} alt={menu.name} className={menu.icon} />
+              <ReactSVG src={menu.icon} className='menu-icon' />
               <p className={menu.name}>{menu.name}</p>
-
+              <div className={`yellow-space ${active === index ? 'show' : ''}`}></div>
             </div>
           ))}
         </div>
