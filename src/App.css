@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -8,7 +10,9 @@ body {
   background: #282C35;
   ;
   color: #FFFFFF;
-  font-family: Poppins;
+  font-family: Poppins,
+    sans-serif;
+  ;
 }
 
 .container {
@@ -142,7 +146,6 @@ body {
   position: relative;
   top: 113.24px;
   left: 33.31px;
-  opacity: 0px;
   gap: 26.64px;
   display: flex;
   flex-direction: column;
