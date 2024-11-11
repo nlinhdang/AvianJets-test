@@ -18,7 +18,7 @@ import Setting from './Setting'
 import { ReactSVG } from 'react-svg';
 
 
-const Sidebar = () => {
+const Sidebar = ({ setActiveMenuName }) => {
 
   const menus = [
     {
@@ -59,9 +59,9 @@ const Sidebar = () => {
   ]
 
   const [active, setActive] = useState(null)
-  const handleClick = (index) => {
+  const handleClick = (index, menuName) => {
     setActive(index === active ? null : index)
-
+    setActiveMenuName(menuName)
   }
   return (
     <>
@@ -71,16 +71,17 @@ const Sidebar = () => {
         </div>
         <div className="top-menu">
           {menus.map((menu, index) => (
-            <div
-              key={index}
+            <div key={index} className='menu-block'>
+              <div className={`${active === index ? 'active' : ''} ${menu.name}-container`}
+                onClick={() => {
+                  handleClick(index, menu.name)
+                }}>
+                <ReactSVG src={menu.icon} className='menu-icon' />
+                <p className={menu.name}>{menu.name}</p>
+              </div>
 
-              className={`menu-container ${active === index ? 'active' : ''} ${menu.name}-container`}
-              onClick={() => {
-                handleClick(index)
-              }}>
-              <ReactSVG src={menu.icon} className='menu-icon' />
-              <p className={menu.name}>{menu.name}</p>
               <div className={`yellow-space ${active === index ? 'show' : ''}`}></div>
+
             </div>
           ))}
         </div>
