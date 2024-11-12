@@ -15,11 +15,12 @@ const Header = () => {
       </div>
 
       <div className="right">
+        
         <div className="search-bar">
           <input type="text" className="search-input" placeholder='Search...' />
           <img src={searchIcon} alt="Search Icon" className="search-icon" />
-
         </div>
+
         <div className="user-account">
           <div className="noti-container">
             <img src={notiIcon} alt="Notification Icon" className="noti-icon" />
