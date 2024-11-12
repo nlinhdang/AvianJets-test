@@ -1,19 +1,18 @@
-import Header from './Header';
 import './App.css';
+import { AppProvider } from './context/AppContext';
+import Header from './Header';
 import Sidebar from './Sidebar';
-import { useState } from 'react';
+import Content from './Content';
 
 function App() {
-
-  const [activeMenuName, setActiveMenuName] = useState('');
-
   return (
-    <>
+    <AppProvider>
       <div className="container">
-        <Header activeMenuName={activeMenuName} />
-        <Sidebar setActiveMenuName={setActiveMenuName} />
+        <Header />
+        <Sidebar />
+        <Content />
       </div>
-    </>
+    </AppProvider>
   );
 }
 
