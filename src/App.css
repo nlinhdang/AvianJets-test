@@ -8,7 +8,7 @@
 
 body {
   background: #282C35;
-  ;
+  width: 100vw;
   color: #FFFFFF;
   font-family: Poppins,
     sans-serif;
@@ -28,7 +28,7 @@ body {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  height: 74.94px;
+  height: 8.7%;
   position: fixed;
   top: 0px;
   padding-right: 25px;
@@ -44,7 +44,7 @@ body {
 }
 
 .sidebar {
-  width: 213.16px;
+  min-width: 213px;
   height: 100%;
   background: #1A1C22;
   position: fixed;
