@@ -2,8 +2,10 @@ import searchIcon from './img/search-normal.png';
 import notiIcon from './img/notification.png'
 import dotNotiIcon from './img/Ellipse 2.png'
 import userPhoto from './img/Photo.png'
-const Header = ({ activeMenuName }) => {
+import { useAppContext } from './context/AppContext';
+const Header = () => {
 
+  const { activeMenuName } = useAppContext();
   return (
     <div className="header">
       <div className="left">
