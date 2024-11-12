@@ -1,7 +1,7 @@
-import balance from '../img/wallet-3.png'
-import income from '../img/wallet.png'
-import expenses from '../img/card.png'
-import savings from '../img/dollar-circle.png'
+import balance from '../img/wallet-3.svg'
+import income from '../img/wallet.svg'
+import expenses from '../img/card.svg'
+import savings from '../img/dollar-circle.svg'
 const dashboardItems = [
   {
     title: 'Balance',

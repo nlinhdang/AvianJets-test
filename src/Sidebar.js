@@ -1,12 +1,12 @@
 import { useAppContext } from './context/AppContext';
-import logo from './img/Logo.png'
+import logo from './img/Logo.svg'
 import menus from './data/menus'
 import { ReactSVG } from 'react-svg';
 const Sidebar = () => {
 
   const { activeIndex, setActiveIndex, setActiveMenuName } = useAppContext();
 
-  const handleClick = (index, menuName) => {
+  const handleMenuClick = (index, menuName) => {
     setActiveIndex(index === activeIndex ? null : index)
     setActiveMenuName(menuName)
   }
@@ -21,13 +21,13 @@ const Sidebar = () => {
             <div key={index} className='menu-block'>
               <div className={`${activeIndex === index ? 'active' : ''} ${menu.name}-container`}
                 onClick={() => {
-                  handleClick(index, menu.name)
+                  handleMenuClick(index, menu.name)
                 }}>
                 <ReactSVG src={menu.icon} className='menu-icon' />
                 <p className={menu.name}>{menu.name}</p>
               </div>
 
-              <div className={`yellow-space ${activeIndex === index ? 'show' : ''}`}></div>
+              {activeIndex === index && <div className="yellow-space"></div>}
 
             </div>
           ))}
